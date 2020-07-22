@@ -72,6 +72,7 @@ public abstract class RemoteConnector {
 
     URI uri;
     try {
+      uriString = uriString.replaceAll(" ","%20");
       uri = new URI(uriString);
       if (FTPRemoteConnector.handlesScheme(uri.getScheme())) {
         if (uri.getPort() == -1) {
